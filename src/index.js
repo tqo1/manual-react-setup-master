@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-require('./app.css');
-
-const title = 'Manual & Minimal Babel + Webpack Setup';
+import Home from './Containers/Home';
 
 ReactDOM.render(
-  <App />,
+  <Home/>,
   document.getElementById('app')
 );
 
