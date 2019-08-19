@@ -10,7 +10,6 @@ export default class Home extends React.Component {
             ...Config,
             currentPassage: 1,
             submitted: false
-
         }
 
     }
@@ -21,11 +20,16 @@ export default class Home extends React.Component {
 
 
     submitTest = () => {
-        alert("submitting")
+        alert("is submitting")
         this.setState({submitted: true})
     }
 
     render() {
-        return <div><TestScreen testData={Config} submitHandler={this.submitTest}/></div>
+
+        return <div>
+            <TestScreen
+            // passages = {Config} passages={this.passages} 
+            testData = {Config} submitHandler={this.submitTest}/>
+            </div>
     }
 }

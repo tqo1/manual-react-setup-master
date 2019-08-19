@@ -12,6 +12,14 @@ module.exports = {
         loader: 'react-hot-loader!babel-loader'
       },
       {
+        test: /\.png$/,
+        loader: 'url-loader?limit=100000&minetype=image/png'
+      },
+      {
+        test: /\.jpg/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.css$/,
         exclude: /^node_modules$/,
         loader: 'style-loader!css-loader',
