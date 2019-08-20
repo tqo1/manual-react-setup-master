@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import { Column, Row } from 'simple-flexbox';
 
 export default class TestScreen extends React.Component {
     
@@ -8,19 +8,24 @@ export default class TestScreen extends React.Component {
         return <div>
             <h1>{testData.testTitle}  Time Limit: {testData.overallTimeInSec} seconds</h1>
             <div>
-                <Container>
-                    <Row>
-                        <Col>1 of 2</Col>
-                        <Col>2 of 2</Col>
+                <Column flexGrow={1}>
+                    <Row vertical = 'center'>
+                        <Column flexGrow={1} horizontal='center'>
+                            <h3> Column 1 </h3>
+                            <span> column 1 content </span>
+                        </Column>
+                        <Column flexGrow={1} horizontal='center'>
+                            <h3> Column 2 </h3>
+                            <span> column 2 content </span>
+                        </Column>
                     </Row>
-                </Container>
-
-                <div className="passageSection">
+                </Column>
+                {/* <div className="passageSection">
                     {testData.passages[0]["passageTitle"]}
                     
-                </div>
+                </div> */}
                 <div className="questionSection">
-                    Lol
+                 
                 </div>
             </div>
             
