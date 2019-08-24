@@ -32,15 +32,6 @@ export default class TestScreen extends React.Component {
            
             {/* Timer section: */}
             <div>
-<<<<<<< Updated upstream
-                <Container>
-                    <Row>
-                        <Col>1 of 2</Col>
-                        <Col>2 of 2</Col>
-                    </Row>
-                </Container>
-
-=======
             <div className='timer'>
                 <h1>{this.state.count}</h1>
                 <div>
@@ -74,7 +65,6 @@ export default class TestScreen extends React.Component {
                         </Column>
                     </Row>
                 </Column>
->>>>>>> Stashed changes
                 <div className="passageSection">
                     {testData.passages[0]["passageTitle"]}
                     
