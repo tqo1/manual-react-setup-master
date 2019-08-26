@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from "./testscreen.css"
 export default class TestScreen extends React.Component {
     
     render() {

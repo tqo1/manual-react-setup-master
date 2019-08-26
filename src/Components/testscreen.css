@@ -1,0 +1,11 @@
+/* The class names are in Testscreen.js  */
+.passageSection {
+    background-color: red;
+    height: 100px;
+
+}
+
+.questionSection {
+    background-color: yellow;
+    height: 100px;
+}
