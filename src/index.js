@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './Containers/Home';
 import Timer from './Components/timer';
 ReactDOM.render(
-  <Timer/>,
+  <Home/>,
   document.getElementById('app')
 );
 
