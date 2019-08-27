@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from "./timer.css"
 export default class Timer extends React.Component {
     constructor (props) {
@@ -29,8 +30,3 @@ export default class Timer extends React.Component {
       )
     }
   }
-  
-  ReactDOM.render(
-    <Timer />,
-    document.getElementById('root')
-  )
