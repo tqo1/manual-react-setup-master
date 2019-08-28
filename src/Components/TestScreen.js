@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from "./testscreen.css"
+import Timer from './timer'
+
 export default class TestScreen extends React.Component {
     
     render() {
         const {testData, submitHandler} = this.props
         return <div>
-            <h1>{testData.testTitle}  Time Limit: {testData.overallTimeInSec} seconds</h1>
+            <Timer/>
             <div>
                 <div className="passageSection">
                     <div className='article'>
