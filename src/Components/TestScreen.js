@@ -6,9 +6,9 @@ export default class TestScreen extends React.Component {
     
     render() {
         const {testData, submitHandler} = this.props
-        return <div>
+        return <div className="appContainer">
             <Timer/>
-            <div>
+            <div className="testContainer">
                 <div className="passageSection">
                     <div className='article'>
                     <p>At noon they sat down by the roadside, near a little brook, and Dorothy opened her basket and got out some bread.  She offered a piece to the Scarecrow, but he refused.</p>
@@ -39,8 +39,6 @@ export default class TestScreen extends React.Component {
                     </div>
                 </div>
             </div>
-
-
         </div>
     }
 }
