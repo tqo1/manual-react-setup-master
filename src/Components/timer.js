@@ -1,32 +1,48 @@
-import React from 'react'
-import styles from "./timer.css"
-export default class Timer extends React.Component {
-    constructor (props) {
-      super(props)
-      this.state = {count: 1}
+
+import React, { Component } from 'react'
+import styles from './timer.css'
+
+export default class Timer extends Component {
+    state = {
+        minutes: 65,
+        seconds: 0,
     }
-    componentWillUnmount () {
-      clearInterval(this.timer)
+
+    componentDidMount() {
+        this.myInterval = setInterval(() => {
+            const { seconds, minutes } = this.state
+
+            if (seconds > 0) {
+                this.setState(({ seconds }) => ({
+                    seconds: seconds - 1
+                }))
+            }
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(this.myInterval)
+                } else {
+                    this.setState(({ minutes }) => ({
+                        minutes: minutes - 1,
+                        seconds: 59
+                    }))
+                }
+            } 
+        }, 1000)
     }
-    tick () {
-      this.setState({count: (this.state.count + 1)})
+
+    componentWillUnmount() {
+        clearInterval(this.myInterval)
     }
-    startTimer () {
-      clearInterval(this.timer)
-      this.timer = setInterval(this.tick.bind(this), 1000)
+
+    render() {
+        const { minutes, seconds } = this.state
+        return (
+            <div className="timerContainer">
+                { minutes === 0 && seconds === 0
+                    ? <h1>Busted!</h1>
+                    : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                }
+            </div>
+        )
     }
-    stopTimer () {
-      clearInterval(this.timer)
-    }
-    render () {
-      return (
-        <div className='timer'>
-          <h1>{this.state.count}</h1>
-          <div>
-            <button onClick={this.startTimer.bind(this)}>Start</button>
-            <button onClick={this.stopTimer.bind(this)}>Stop</button>
-          </div>
-        </div>
-      )
-    }
-  }
+}

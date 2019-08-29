@@ -1,11 +1,43 @@
 /* The class names are in Testscreen.js  */
-.passageSection {
-    background-color: red;
-    height: 100px;
 
+
+.testContainer {
+    display: flex;
+    margin-top: 10vh;
+    height: 85vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    justify-content: space-evenly;
+}
+.passageSection {
+    background-color: rgba(210, 215, 211, 1);
+    overflow-y: auto;
+    overflow-x: auto; 
 }
 
 .questionSection {
     background-color: yellow;
-    height: 100px;
+    overflow-y: auto;
+    overflow-x: auto; 
+}
+
+.article {
+    font-family: "ff-tisa-web-pro",serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #333;
+    padding-left: 150px;
+    flex: 0 0 100%; /* dont shrink, dont grow, say at the same widdth */
+
+}  
+.article2 {
+    font-family: "ff-tisa-web-pro",serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #333;
+    padding: 1em;
+    flex: 0 0 100%; /* dont shrink, dont grow, say at the same widdth */
+
 }
