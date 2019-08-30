@@ -29,6 +29,7 @@
     color: #333;
     padding-left: 150px;
     flex: 0 0 100%; /* dont shrink, dont grow, say at the same widdth */
+    white-space: nowrap;
 
 }  
 .article2 {
@@ -39,5 +40,5 @@
     color: #333;
     padding: 1em;
     flex: 0 0 100%; /* dont shrink, dont grow, say at the same widdth */
-
+white-space: nowrap;
 }
