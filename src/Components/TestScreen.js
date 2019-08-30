@@ -8,14 +8,6 @@ export default class TestScreen extends React.Component {
         const {testData, submitHandler} = this.props
         return <div className="appContainer">
             <Timer/>
-            {/* try drawing */}
-            <div id="controllers">
-                <span class="controller" id="undo">undo</span>  
-                <span class="controller" id="redo">redo</span>
-                <span class="controller" id="pencil">pencil</span>
-            </div>
-                <canvas width="600" height="400" id="paint"></canvas>
-            
             <div className="testContainer">
                 <div className="passageSection">
                     <div className='article'>
