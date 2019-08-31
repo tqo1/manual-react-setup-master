@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from "./testscreen.css"
 import Timer from './timer'
-
+import Canvas from './draw'
 export default class TestScreen extends React.Component {
     
     render() {
         const {testData, submitHandler} = this.props
         return <div className="appContainer">
             <Timer/>
+            <Canvas/>
+            
             <div className="testContainer">
                 <div className="passageSection">
                     <div className='article'>
