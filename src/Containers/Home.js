@@ -26,6 +26,6 @@ export default class Home extends React.Component {
     }
 
     render() {
-        return <div><TestScreen testData={Config} submitHandler={this.submitTest}/></div>
+        return <TestScreen testData={Config} submitHandler={this.submitTest}/>
     }
 }
