@@ -25,6 +25,7 @@
     "draft-js": "^0.11.0",
     "draft-js-plugins-editor": "^3.0.0",
     "react": "^15.6.2",
-    "react-dom": "^15.6.2"
+    "react-dom": "^15.6.2",
+    "react-medium-editor": "^1.8.1"
   }
 }

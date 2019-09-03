@@ -1,19 +1,21 @@
 import React from "react";
 import {
+  // Editor,
   EditorState,
   RichUtils
 } from "draft-js";
 import Editor from "draft-js-plugins-editor";
-import createHighlightPlugin from "./highlightPlugin";
+import createHighlightPlugin from "./highlightplugin";
 import "./highlight.css";
 
 const highlightPlugin = createHighlightPlugin();
 
 class PageContainer extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      editorState: EditorState.createEmpty()
+      editorState: false
     };
 
     this.plugins = [highlightPlugin];
@@ -65,6 +67,9 @@ class PageContainer extends React.Component {
     );
   };
 
+  // onLinkClick = () => {
+  // 	this.onChange(RichUtils.toggleLink(this.state.editorState));
+  // };
 
   render() {
     return (
@@ -85,18 +90,23 @@ class PageContainer extends React.Component {
           <span style={{ background: "yellow", padding: "0.3em" }}>H</span>
         </button>
         <div className="editors">
-          <Editor
+          <section
             editorState={this.state.editorState}
-         //   handleKeyCommand={this.handleKeyCommand}
+            handleKeyCommand={this.handleKeyCommand}
             plugins={this.plugins}
             onChange={this.onChange}
           >
-                    <p>At noon they sat down by the roadside, near a little brook, and Dorothy opened her basket and got out some bread.  She offered a piece to the Scarecrow, but he refused.</p>
-                    <p>&ldquo;I am never hungry,&rdquo; he said, &ldquo;and it is a lucky thing I am not, for my mouth is only painted, and if I should cut a hole in it so I could eat, the straw I am stuffed with would come out, and that would spoil the shape of my head.&rdquo;</p>
-                    <p>At noon they sat down by the roadside, near a little brook, and Dorothy opened her basket and got out some bread.  She offered a piece to the Scarecrow, but he refused.</p>
-                    <p>&ldquo;I am never hungry,&rdquo; he said, &ldquo;and it is a lucky thing I am not, for my mouth is only painted, and if I should cut a hole in it so I could eat, the straw I am stuffed with would come out, and that would spoil the shape of my head.&rdquo;</p>
-            </Editor>
-            </div>
+            <p>
+            An untrained person seated in the cockpit of a modern get liner would
+            be completely bewildered by the array of gauges and controls before
+            him - but he would not be surprised or bothered by this because he
+            recognizes that flying an airplane is a complicated task that he is
+            unable to perform.   However, when he struggles to operate a door,
+            switches, water faucets, and other common everyday devices,
+            he becomes quite upset.
+          </p>
+          </section>
+        </div>
       </div>
     );
   }
