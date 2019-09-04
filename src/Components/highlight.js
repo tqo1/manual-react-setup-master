@@ -105,6 +105,33 @@ class PageContainer extends React.Component {
             switches, water faucets, and other common everyday devices,
             he becomes quite upset.
           </p>
+          <p>
+            An untrained person seated in the cockpit of a modern get liner would
+            be completely bewildered by the array of gauges and controls before
+            him - but he would not be surprised or bothered by this because he
+            recognizes that flying an airplane is a complicated task that he is
+            unable to perform.   However, when he struggles to operate a door,
+            switches, water faucets, and other common everyday devices,
+            he becomes quite upset.
+          </p>            
+          <p>
+            An untrained person seated in the cockpit of a modern get liner would
+            be completely bewildered by the array of gauges and controls before
+            him - but he would not be surprised or bothered by this because he
+            recognizes that flying an airplane is a complicated task that he is
+            unable to perform.   However, when he struggles to operate a door,
+            switches, water faucets, and other common everyday devices,
+            he becomes quite upset.
+          </p>
+          <p>
+            An untrained person seated in the cockpit of a modern get liner would
+            be completely bewildered by the array of gauges and controls before
+            him - but he would not be surprised or bothered by this because he
+            recognizes that flying an airplane is a complicated task that he is
+            unable to perform.   However, when he struggles to operate a door,
+            switches, water faucets, and other common everyday devices,
+            he becomes quite upset.
+          </p>
           </section>
         </div>
       </div>
