@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./testscreen.css"
 import Timer from './timer'
-import PageContainer from './highlight'
+import Highlight from './getHighlight'
 export default class TestScreen extends React.Component {
     
     render() {
@@ -10,7 +10,7 @@ export default class TestScreen extends React.Component {
             <Timer/>            
             <div className="testContainer">
                 <div className="passageSection">
-                <PageContainer/>
+                <Highlight/>
                 </div>
                 <div className="questionSection">
                     <div className="article2">

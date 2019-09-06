@@ -24,7 +24,7 @@
 
 }
 
-.editors {
+.article {
     font-family: "ff-tisa-web-pro",serif;
     font-size: 16px;
     font-weight: 400;
@@ -45,3 +45,7 @@
     flex: 0 0 100%; /* dont shrink, dont grow, say at the same widdth */
 white-space: nowrap;
 }
+
+.highlight {
+    background-color: yellow;
+  }
