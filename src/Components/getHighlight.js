@@ -4,7 +4,7 @@ import styles from "./testscreen.css"
 
 class Highlight extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.onMouseDown = this.onMouseDown.bind(this);
         this.onMouseUp = this.onMouseUp.bind(this);
         this.saveSelection = this.saveSelection.bind(this);
