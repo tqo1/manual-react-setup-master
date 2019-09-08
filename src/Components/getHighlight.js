@@ -2,24 +2,23 @@ import React, { Component } from "react";
 
 import styles from "./testscreen.css"
 
-class Highlight extends Component {
+export default class Highlight extends Component {
     constructor(props) {
         super(props);
-        this.onMouseDown = this.onMouseDown.bind(this);
-        this.onMouseUp = this.onMouseUp.bind(this);
+       
         this.saveSelection = this.saveSelection.bind(this);
         this.restoreSelection = this.restoreSelection.bind(this);
       }
       saveSelection = () => {
-        if (window.getSelection) {
-          const sel = window.getSelection();
-          if (sel.getRangeAt && sel.rangeCount) {
-            return sel.getRangeAt(0);
-          }
-        } else if (document.selection && document.selection.createRange) {
-          return document.selection.createRange();
+        //if some text is selected wrap it around a span and change the color and font weight
+        if (window.getSelection()) {
+          const selection = window.getSelection();
+          var range = selection.getRangeAt(0);
+          var newNode = document.createElement("span");
+          newNode.setAttribute("style", "font-weight: bold;background-color: pink");
+          range.surroundContents(newNode); 
         }
-        return null;
+        
       };
 
       restoreSelection = range => {
@@ -37,7 +36,7 @@ class Highlight extends Component {
       render() {
         return (
         <div>
-        <div  classname="highlight" onMouseUp={this.saveSelection}>
+        <div  className="highlight" onMouseUp={this.saveSelection}>
         <p>
             An untrained person seated in the cockpit of a modern get liner would
             be completely bewildered by the array of gauges and controls before
@@ -48,7 +47,6 @@ class Highlight extends Component {
             he becomes quite upset.
         </p>
         </div>
-        onMouseDown={this.restoreSelection}
         </div>
         )
       }
