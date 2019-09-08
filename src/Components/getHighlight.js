@@ -5,9 +5,7 @@ import styles from "./testscreen.css"
 export default class Highlight extends Component {
     constructor(props) {
         super(props);
-       
         this.saveSelection = this.saveSelection.bind(this);
-        this.restoreSelection = this.restoreSelection.bind(this);
       }
       saveSelection = () => {
         //if some text is selected wrap it around a span and change the color and font weight
@@ -15,28 +13,14 @@ export default class Highlight extends Component {
           const selection = window.getSelection();
           var range = selection.getRangeAt(0);
           var newNode = document.createElement("span");
-          newNode.setAttribute("style", "font-weight: bold;background-color: pink");
+          newNode.setAttribute("style", "font-weight: bold;background-color: yellow");
           range.surroundContents(newNode); 
         }
-        
-      };
-
-      restoreSelection = range => {
-        if (range) {
-          if (window.getSelection) {
-            const sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
-          } else if (document.selection && range.select) {
-            range.select();
-          }
-        }
-      };
-
+      }
       render() {
         return (
         <div>
-        <div  className="highlight" onMouseUp={this.saveSelection}>
+        <div  className="highlight" onMouseUp={this.saveSelection} onMouseDown={this.restoreSelection}>
         <p>
             An untrained person seated in the cockpit of a modern get liner would
             be completely bewildered by the array of gauges and controls before
