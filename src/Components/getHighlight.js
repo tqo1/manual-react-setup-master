@@ -8,13 +8,26 @@ export default class Highlight extends Component {
         this.saveSelection = this.saveSelection.bind(this);
       }
       saveSelection = () => {
-        //if some text is selected wrap it around a span and change the color and font weight
-        if (window.getSelection()) {
-          const selection = window.getSelection();
-          var range = selection.getRangeAt(0);
-          var newNode = document.createElement("span");
-          newNode.setAttribute("style", "font-weight: bold;background-color: yellow");
-          range.surroundContents(newNode); 
+        var range, sel;
+        if (window.getSelection) {
+            // Non-IE case
+            sel = window.getSelection();
+            if (sel.getRangeAt) {
+                range = sel.getRangeAt(0);
+            }
+            document.designMode = "on";
+            if (range) {
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+            document.execCommand("bold", false, null);
+            document.designMode = "off";
+        } else if (document.selection && document.selection.createRange &&
+                document.selection.type != "None") {
+            // IE case
+            range = document.selection.createRange();
+            range.execCommand("bold", false, null);
+
         }
       }
       render() {

@@ -1,6 +1,8 @@
 /* The class names are in Testscreen.js  */
 
-
+.highlight b {
+    background-color: pink;
+}
 .testContainer {
     display: flex;
     margin-top: 10vh;
