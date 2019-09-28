@@ -11,6 +11,11 @@ export default class TestScreen extends React.Component {
             <Timer/>            
             <div className="testContainer">
                 <div className="passageSection">
+                <div className="passagename">
+                <b>
+                This passage is from James Joyce, The Dubliners originally published in 1914                
+                </b>
+                </div>
                 <Highlight/>
                 </div>
                 <div className="questionSection">

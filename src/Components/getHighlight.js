@@ -34,14 +34,35 @@ export default class Highlight extends Component {
         return (
         <div>
         <div  className="highlight" onMouseUp={this.saveSelection} onMouseDown={this.restoreSelection}>
+        <p> 
+                    Mr Holohan, assistant secretary of the Eire
+            Abu Society, had been walking up and down
+            Dublin for nearly a month, with his hands and
+            pockets full of dirty pieces of paper, arranging
+            about the series of concerts. He had a game
+            leg and for this his friends called him Hoppy
+            Holohan. He walked up and down constantly,
+            stood by the hour at street corners arguing
+            the point and made notes; but in the end it
+            was Mrs Kearney who arranged everything
+        </p>
         <p>
-            An untrained person seated in the cockpit of a modern get liner would
-            be completely bewildered by the array of gauges and controls before
-            him - but he would not be surprised or bothered by this because he
-            recognizes that flying an airplane is a complicated task that he is
-            unable to perform.   However, when he struggles to operate a door,
-            switches, water faucets, and other common everyday devices,
-            he becomes quite upset.
+                Miss Devlin had become Mrs Kearney out
+        of spite. She had been educated in a
+        high-class convent, where she had learned
+        French and music. As she was naturally pale
+        and unbending in manner she made few
+        friends at school. When she came to the age
+        of marriage she was sent out to many houses
+        where her playing and ivory manners were
+        much admired. She sat amid the chilly circle
+        of her accomplishments, waiting for some
+        suitor to brave it and oer her a brilliant life.
+        But the young men whom she met were Kathleen, to a good convent, where she
+        learned French and music, and aerward paid
+        her fees at the Academy. Every year in the
+        month of July Mrs Kearney found occasion to
+        say to some friend:
         </p>
         </div>
         </div>
