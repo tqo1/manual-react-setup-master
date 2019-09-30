@@ -22,7 +22,16 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "baseui": "^9.5.2",
+    "draft-js": "^0.11.0",
+    "draft-js-plugins-editor": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-medium-editor": "^1.8.1",
+    "reakit": "^1.0.0-beta.8",
+    "realkit": "^1.0.2",
+    "styletron-engine-atomic": "^1.4.1",
+    "styletron-react": "^5.2.1"
   }
 }
