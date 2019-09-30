@@ -1,5 +1,9 @@
 import React from 'react'
 import styles from "./testscreen.css"
+<<<<<<< Updated upstream
+=======
+import Timer from './timer'
+>>>>>>> Stashed changes
 export default class TestScreen extends React.Component {
     
     render() {
@@ -8,6 +12,13 @@ export default class TestScreen extends React.Component {
             <h1>{testData.testTitle}  Time Limit: {testData.overallTimeInSec} seconds</h1>
             <div>
                 <div className="passageSection">
+<<<<<<< Updated upstream
+=======
+                    <div className='article'>
+                    
+                    </div>
+                </div>
+>>>>>>> Stashed changes
 
                 </div>
                 <div className="questionSection">
