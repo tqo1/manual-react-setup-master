@@ -1,59 +1,51 @@
 import React, { Component } from "react";
-import App from "./popover";
-import styles from "./testscreen.css"; 
-import {
-    usePopoverState,
-    Popover as BasePopover,
-    PopoverDisclosure,
-    PopoverArrow
-  } from "reakit/Popover";
-  
+
+import styles from "./testscreen.css"
+import { Bar } from "./popoverui";
+import Popover from "react-text-selection-popover";
+import placeRightBelow from "react-text-selection-popover/lib/placeRightBelow";
 
 export default class Highlight extends Component {
     constructor(props) {
         super(props);
+        this.state = {isToggleOn: true};
+        this.refParagraph = React.createRef();
+        //this.ToggleButton = this.ToggleButton.bind(this);
         this.saveSelection = this.saveSelection.bind(this);
-        this.myRef = React.createRef();
       }
-
-
+      ToggleButton() {
+        this.setState(function(prevState) {
+          return {isToggleOn: !prevState.isToggleOn};
+        });
+      }
       saveSelection = () => {
         var range, sel;
         if (window.getSelection) {
             // Non-IE case
             sel = window.getSelection();
             if (sel.getRangeAt) {
-                <Popover
-                aria-label="Custom popover"
-                content={range = sel.getRangeAt(0)}
-              >
-                Add highlight
-              </Popover>
+                range = sel.getRangeAt(0);
             }
             document.designMode = "on";
             if (range) {
                 sel.removeAllRanges();
-                sel.addRange(range); 
-                <Popover
-                aria-label="Custom popover"
-                content={range = sel.getRangeAt(0)}
-              >
-                remove highlight
-              </Popover>
+                sel.addRange(range);
             }
-            document.execCommand("italic", false, null);
+            document.execCommand("bold", false, null);
             document.designMode = "off";
         } else if (document.selection && document.selection.createRange &&
                 document.selection.type != "None") {
             // IE case
             range = document.selection.createRange();
-            range.execCommand("italic", false, null);
+            range.execCommand("bold", false, null);
+
         }
       }
       render() {
         return (
         <div>
-        <div  className="highlight" onMouseUp={this.saveSelection}>
+
+        <div  className="highlight" ref={this.refParagraph} >
         <p> 
                     Mr Holohan, assistant secretary of the Eire
             Abu Society, had been walking up and down
@@ -85,6 +77,14 @@ export default class Highlight extends Component {
         say to some friend:
         </p>
         </div>
+        <Popover selectionRef={this.refParagraph}>
+              <Bar bg="blue" onClick={() => this.ToggleButton()}>
+                {this.state.isToggleOn ? this.saveSelection : document.designMode = "off"}
+                <p>
+                  Highlight                
+                </p>
+              </Bar>
+            </Popover>
         </div>
         )
       }
