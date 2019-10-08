@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
-import styles from "./testscreen.css"
-
+import { Bar } from "./popoverui";
 import Popover from "react-text-selection-popover";
 
 export default class Highlight extends Component {
@@ -76,9 +74,15 @@ export default class Highlight extends Component {
         say to some friend:
         </p>
         <Popover selectionRef={this.refParagraph} >
-              <div>Test icons</div>
-              
+        <Bar bg="yellow">
+          <div>
+          <p>
+          Highlight
+          </p>
+          </div>
+        </Bar>
         </Popover>
+
         </div>
         )
       }
