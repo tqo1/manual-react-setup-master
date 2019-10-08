@@ -1,8 +1,21 @@
 {
+<<<<<<< Updated upstream
   "name": "React",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+=======
+  "name": "react-project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "react-text-selection-popover": "^1.3.2",
+    "styled-components": "^5.0.0-beta.9"
+  },
+>>>>>>> Stashed changes
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js"
   },

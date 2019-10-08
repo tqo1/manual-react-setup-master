@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Bar } from "./popoverui";
 
 import styles from "./testscreen.css"
 import { Bar } from "./popoverui";
@@ -76,6 +77,7 @@ export default class Highlight extends Component {
         month of July Mrs Kearney found occasion to
         say to some friend:
         </p>
+<<<<<<< Updated upstream
         </div>
         <Popover selectionRef={this.refParagraph}>
               <Bar bg="blue" onClick={() => this.ToggleButton()}>
@@ -85,6 +87,18 @@ export default class Highlight extends Component {
                 </p>
               </Bar>
             </Popover>
+=======
+        <Popover selectionRef={this.refParagraph} >
+              <div>
+              <Bar bg="yellow">
+              <p>
+                Test icons
+                </p>
+              </Bar>
+                </div>
+              
+        </Popover>
+>>>>>>> Stashed changes
         </div>
         )
       }
