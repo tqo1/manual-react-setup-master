@@ -73,9 +73,9 @@ export default class Highlight extends Component {
         month of July Mrs Kearney found occasion to
         say to some friend:
         </p>
-        <Popover selectionRef={this.refParagraph} onClick ={ this.saveSelection} >
+        <Popover selectionRef={this.refParagraph} >
         <Bar bg="yellow">
-          <div>
+          <div onClick ={ this.saveSelection} >
           <p>
           Highlight
           </p>
