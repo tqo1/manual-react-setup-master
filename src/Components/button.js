@@ -29,45 +29,30 @@ export default class Multiplechoice extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <p className="title">Select the correct answer:</p>
+        <h1>Custom Radio Buttons</h1>
+        <label class="container">
+          {" "}
+          One
+          <input type="radio" checked="checked" name="radio" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          Two
+          <input type="radio" name="radio" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          Three
+          <input type="radio" name="radio" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          Four
+          <input type="radio" name="radio" />
+          <span class="checkmark"></span>
+        </label>
 
-        <ul>
-          <li>
-            <label>
-              <input
-                type="radio"
-                value="I have one carrot"
-                checked={this.state.size === "I have one carrot"}
-                onChange={this.handleChange}
-              />
-              I have one carrot
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input
-                type="radio"
-                value="I have one carrots"
-                checked={this.state.size === "I have one carrots"}
-                onChange={this.handleChange}
-              />
-              I have two carrots
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input
-                type="radio"
-                value="I have three carrots"
-                checked={this.state.size === "I have three carrots"}
-                onChange={this.handleChange}
-              />
-              I have three carrots
-            </label>
-          </li>
-        </ul>
+        {/* </body> */}
 
         <button type="submit" className="submit-button">
           Make your choice
