@@ -5,17 +5,10 @@ import Popover from "react-text-selection-popover";
 export default class Highlight extends Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: true};
         this.refParagraph = React.createRef();
-        //this.ToggleButton = this.ToggleButton.bind(this);
         this.saveSelection = this.saveSelection.bind(this);
+        this.saveHighlight = this.saveSelection.bind(this);
       }
-      ToggleButton() {
-        this.setState(function(prevState) {
-          return {isToggleOn: !prevState.isToggleOn};
-        });
-      }
-
    
       saveSelection = () => {
         var range, sel;
@@ -39,6 +32,11 @@ export default class Highlight extends Component {
             range.execCommand("underline", false, null);
 
         }
+      }
+
+      saveHighlight = () => {
+        const highlighted = [];
+        
       }
       render() {
         return (
