@@ -9,7 +9,54 @@ export default class Highlight extends Component {
         this.saveSelection = this.saveSelection.bind(this);
         this.saveHighlight = this.saveSelection.bind(this);
       }
+
+      componentDidMount() {
+         var ele = document.getElementById('highlight');
+         var savedObject = JSON.parse(localStorage.getItem('savedObject'))
+         if(savedObject && savedObject.length>0) {
+            savedObject.forEach((val)=>{
+              var pos = val.split('-')
+              console.log(val)
+
+              this.restoreSelection(ele, pos[0], pos[1])
+            })
+         }
+      }
    
+      restoreSelection = (containerEl, start, end) => {
+        var savedSel = {start, end}
+        var charIndex = 0, range = document.createRange();
+        range.setStart(containerEl, 0);
+        range.collapse(true);
+        var nodeStack = [containerEl], node, foundStart = false, stop = false;
+        while (!stop && (node = nodeStack.pop())) {
+            if (node.nodeType == 3) {
+                var nextCharIndex = charIndex + node.length;
+                if (!foundStart && savedSel.start >= charIndex && savedSel.start <= nextCharIndex) {
+                    range.setStart(node, savedSel.start - charIndex);
+                    foundStart = true;
+                }
+                if (foundStart && savedSel.end >= charIndex && savedSel.end <= nextCharIndex) {
+                    range.setEnd(node, savedSel.end - charIndex);
+                    stop = true;
+                }
+                charIndex = nextCharIndex;
+            } else {
+                var i = node.childNodes.length;
+                while (i--) {
+                    nodeStack.push(node.childNodes[i]);
+                }
+            }
+        }
+        document.designMode = "on";
+
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("underline", false, null);
+        document.designMode = "off";
+    }
+
       saveSelection = () => {
         var range, sel;
         if (window.getSelection) {
@@ -18,7 +65,16 @@ export default class Highlight extends Component {
             if (sel.getRangeAt) {
                 range = sel.getRangeAt(0);
             }
+            console.log(range.startOffset, range.endOffset)
+            var savedObject = JSON.parse(localStorage.getItem("savedObject"));
+            if(!savedObject) {
+              savedObject = [];
+            }
+            savedObject.push(range.startOffset+"-"+range.endOffset)
+            localStorage.setItem("savedObject", JSON.stringify(savedObject))
+             
             document.designMode = "on";
+            
             if (range) {
                 sel.removeAllRanges();
                 sel.addRange(range);
@@ -42,7 +98,7 @@ export default class Highlight extends Component {
         return (
         <div>
 
-        <p  className="highlight" ref={this.refParagraph} >
+        <p id='highlight' className="highlight" ref={this.refParagraph} >
                     Mr Holohan, assistant secretary of the Eire
             Abu Society, had been walking up and down
             Dublin for nearly a month, with his hands and
